@@ -29,6 +29,12 @@
         "ui-tars-desktop#build:e2e"
       ]
     },
+    "multidesk#build": {
+      "outputs": [
+        "apps/multidesk/dist/**",
+        "apps/multidesk/out/**"
+      ]
+    },
     "//#format": {},
     "//#lint": {},
     "//#test": {},

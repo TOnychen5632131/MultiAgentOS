@@ -10,6 +10,9 @@
     "commit": "oco",
     "bootstrap": "pnpm i",
     "dev:ui-tars": "turbo run ui-tars-desktop#dev",
+    "dev:multidesk": "pnpm --filter multidesk dev",
+    "build:multidesk": "pnpm --filter multidesk build",
+    "dist:multidesk": "pnpm --filter multidesk dist",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "test": "vitest",
@@ -20,7 +23,11 @@
     "prepare": "husky"
   },
   "pnpm": {
-    "patchedDependencies": {}
+    "patchedDependencies": {},
+    "overrides": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    }
   },
   "devDependencies": {
     "@common/configs": "workspace:*",

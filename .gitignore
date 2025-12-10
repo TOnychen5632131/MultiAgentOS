@@ -1,6 +1,7 @@
 node_modules
 dist
 out
+apps/multidesk/release/
 .tmp
 .DS_Store
 *.log*

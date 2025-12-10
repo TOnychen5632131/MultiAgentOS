@@ -1,0 +1,70 @@
+{
+  "name": "multidesk",
+  "private": true,
+  "version": "0.0.1",
+  "description": "MultiDesk: 2x2 multi-session UI-TARS desktop shell",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@nut-tree/nut-js": "^4.0.0",
+    "node-llama-cpp": "^3.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@types/node": "^20.14.8",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "34.1.1",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^3.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.3",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.7.2",
+    "vite": "^6.1.0"
+  },
+  "build": {
+    "appId": "com.multidesk.app",
+    "productName": "MultiDesk",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/@nut-tree/libnut/**",
+      "node_modules/@nut-tree/nut-js/**",
+      "node_modules/node-llama-cpp/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
